@@ -138,5 +138,68 @@ namespace WinFormsApp2
             res = -dn;
             textBox1.Text = res.ToString();
         }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "") textBox1.Text = "0";
+            textBox1.Text = Math.Exp(Convert.ToDouble(textBox1.Text)).ToString();
+         
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "") textBox1.Text = "0";
+            int a = 1;
+            try
+            {
+                Convert.ToInt32(textBox1.Text);
+
+            }
+            catch
+            {
+
+                MessageBox.Show("Введите, пожалуйста целое число.", "Ошибка!");
+                a = 0;
+
+            }
+
+            if (a == 0)
+            {
+
+            }
+            else
+            {
+                for (int i = 2; i <= Convert.ToInt32(textBox1.Text); i++)
+                {
+
+                    a = a * i;
+                }
+                textBox1.Text = a.ToString();
+               
+            }
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToDouble(textBox1.Text) == 0) MessageBox.Show("Деление на ноль невозможно.", "Ошибка!");
+            else
+            {
+                if (textBox1.Text == "") textBox1.Text = "0";
+                textBox1.Text = (1 / (Convert.ToDouble(textBox1.Text))).ToString();
+             
+            }
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "") textBox1.Text = "0";
+            textBox1.Text = Math.Tan(Convert.ToDouble(textBox1.Text)).ToString();
+          
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }   
 }
